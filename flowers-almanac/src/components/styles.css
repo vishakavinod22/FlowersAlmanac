@@ -1,0 +1,82 @@
+body{
+    background-color: #F3D7CA;
+}
+
+.header{
+    margin-top: 3rem;
+}
+
+.header img{
+    width: 1.5rem;
+    margin: auto 20px;
+}
+
+.btn-row{
+    margin-top: 5rem;
+}
+
+.btn:hover{
+    background-color: #FF8080;
+    color: #000;
+}
+
+.form-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.form-container .form-btn{
+    margin-top: 20px;
+}
+
+.form-label{
+    font-weight: 700;
+}
+
+.form-item {
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    font-size: small;
+    color: red;
+}
+
+.drop-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #F5EEE6;
+}
+
+.drop-box p{
+    margin-top: 20px;
+    font-size: small;
+}
+
+.flower-info-container{
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.flower-info-container img{
+    width: 150px;
+    height: 150px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.flower-info-container p span{
+    font-weight: 700;
+    font-style: normal;
+}
