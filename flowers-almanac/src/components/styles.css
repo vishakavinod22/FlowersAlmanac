@@ -13,7 +13,16 @@ body{
 
 .btn-row{
     margin-top: 5rem;
+    margin-bottom: 20px;
 }
+
+.btn-col{
+    margin-top: 50px;
+}
+
+/* .btn{
+    margin: auto 2rem;
+} */
 
 .btn:hover{
     background-color: #FF8080;
@@ -28,10 +37,6 @@ body{
     background-color: #fff;
     border-radius: 8px;
     text-align: left;
-}
-
-.form-container .form-btn{
-    margin-top: 20px;
 }
 
 .form-label{

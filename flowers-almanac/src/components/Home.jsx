@@ -28,14 +28,17 @@ function Home(){
             </h1>
             <Container className="btn-container">
                 <Row className='btn-row'>
-                    <Col>
+                    <Col xs={6} md={3}>
                         <Button className='btn' variant="dark" size="lg" onClick={handleAddBtn}>Add Flower</Button>
                     </Col>
-                    <Col>
+                    <Col xs={6} md={3}>
                         <Button className='btn' variant="dark" size="lg" onClick={handleRandomBtn}>Random Flower</Button>
                     </Col>
-                    <Col>
+                    <Col xs={6} md={3}>
                         <Button className='btn' variant="dark" size="lg">Display Flowers</Button>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Button className='btn' variant="dark" size="lg">Upload Flower</Button>
                     </Col>
                 </Row>
             </Container>
