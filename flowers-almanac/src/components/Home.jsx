@@ -4,7 +4,6 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import AddFlower from './AddFlower';
 import ViewFlower from './ViewFlower';
 import { useState } from 'react';
-// import axios from 'axios';
 
 function Home() {
     const [isAddBtnClicked, setIsAddBtnClicked] = useState(false);
