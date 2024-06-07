@@ -4,7 +4,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import AddFlower from './AddFlower';
 import ViewFlower from './ViewFlower';
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 function Home() {
     const [isAddBtnClicked, setIsAddBtnClicked] = useState(false);
@@ -18,18 +18,6 @@ function Home() {
     const handleRandomBtn = async (e) => {
         setIsAddBtnClicked(false);
         setIsRandomBtnClicked(!isRandomBtnClicked);
-        try {
-            const response = await axios.get('https://eppyrzn88l.execute-api.us-east-1.amazonaws.com/build', {
-                headers: {
-                    'Access-Control-Allow-Headers': 'Content-Type',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
-                }
-            });
-            console.log(response);
-        } catch (error) {
-            console.error('Error fetching groups:', error);
-        }
     }
 
     return (
@@ -56,7 +44,7 @@ function Home() {
                 </Row>
             </Container>
             {isAddBtnClicked && <AddFlower />}
-            {isRandomBtnClicked && <ViewFlower isClicked={isRandomBtnClicked} />}
+            {isRandomBtnClicked && <ViewFlower />}
         </div>
     );
 }
