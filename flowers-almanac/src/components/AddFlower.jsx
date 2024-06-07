@@ -30,20 +30,14 @@ function AddFlower(){
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-
+        // e.preventDefault();
         try {
             const requestBody = {
                 common_name: flowerData.commonName,
                 scientific_name: flowerData.scientificName
             };
-            await axios.post('https://yzle8hyh6h.execute-api.us-east-1.amazonaws.com/build/add', {body: JSON.stringify(requestBody)});
-            // alert('Flower added successfully!');
-            // Optionally, clear the form fields after successful submission
-            setFlowerData({
-                commonName: '',
-                scientificName: ''
-            });
+            axios.post('https://0ngvbvj23k.execute-api.us-east-1.amazonaws.com/build/addFlower', {body: JSON.stringify(requestBody)});
+            alert('Flower added successfully.');
         } catch (error) {
             console.error('Error adding flower:', error);
             alert('Failed to add flower. Please try again later.');
