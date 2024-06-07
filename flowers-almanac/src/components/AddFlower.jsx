@@ -2,9 +2,6 @@ import { useState } from 'react';
 import './styles.css';
 import {Button, Form} from 'react-bootstrap';
 import axios from 'axios';
-// import { useContext, useState } from 'react';
-// import UserContext from './UserContext';
-// import { useNavigate } from 'react-router-dom';
 
 function AddFlower(){
 
