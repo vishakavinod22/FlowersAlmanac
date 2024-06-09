@@ -2,19 +2,15 @@ import { useState } from 'react';
 import './styles.css';
 import { Button} from 'react-bootstrap';
 
+// Component that downloads the CSV
 function DownloadCsv(props){
     const [isDownload, setIsDownload] = useState(false);
     const [message, setMessage] = useState('');
 
+    //Function that downloads the csv file from the s3 bucket after user clicks download
     const handleDownload = () => {
-        // const url = props.url;
-        // const link = document.createElement('a');
-        // link.href = url;
-        // document.body.appendChild(link);
-        // link.click();
-        // document.body.removeChild(link);
-        // setIsDownload(true);
         try {
+            // props.url is passed from Home.jsx that calls the API that will trigger the Download Flower Lambda Function
             const url = props.url;
     
             const link = document.createElement('a');

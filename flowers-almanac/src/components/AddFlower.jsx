@@ -3,6 +3,7 @@ import './styles.css';
 import {Button, Form} from 'react-bootstrap';
 import axios from 'axios';
 
+// Component to add flower to the database
 function AddFlower(){
 
     const [flowerData, setFlowerData] = useState({
@@ -10,14 +11,17 @@ function AddFlower(){
         scientificName: ''
     });
 
+    // Function is called when user enters data into the input fields of the form
     const handleInputChange = (e) => {
         const inputValue = e.target.value;
         const inputName = e.target.name;
+        // sets the common name entered by the user
         if(inputName === "commonName"){
             setFlowerData({
                 ...flowerData,
                 "commonName": inputValue
             });
+            // sets the scientific name entered by the user
         } else if(inputName === "scientificName"){
             setFlowerData({
                 ...flowerData,
@@ -26,6 +30,7 @@ function AddFlower(){
         }
     }
 
+    // Function is called when user clicks the submit button
     const handleSubmit = async (e) => {
         // e.preventDefault();
         try {
@@ -33,6 +38,7 @@ function AddFlower(){
                 common_name: flowerData.commonName,
                 scientific_name: flowerData.scientificName
             };
+            // calling the API that will trigger the Add Flower Lambda Function
             axios.post('https://0ngvbvj23k.execute-api.us-east-1.amazonaws.com/build/addFlower', {body: JSON.stringify(requestBody)});
             alert('Flower added successfully.');
         } catch (error) {
@@ -61,10 +67,6 @@ function AddFlower(){
                             placeholder="Enter the scientific name"
                             onChange={handleInputChange} />
                     </Form.Group>
-                    {/* <Form.Label className='form-label'>Upload Image</Form.Label>
-                    <Form.Group className="mb-3 form-item drop-box" controlId="formImageUpload">
-                        <p>Drag 'n' drop task files here, or click to select files</p>
-                    </Form.Group> */}
                     <Button className='form-btn' variant="dark" type="submit">
                         Add New Flower
                     </Button>

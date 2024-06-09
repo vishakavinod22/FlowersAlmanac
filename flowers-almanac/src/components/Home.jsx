@@ -16,6 +16,7 @@ function Home() {
     const [isDownloadBtnDisplayed, setIsDownloadBtnDisplayed] = useState(false);
     const [downloadUrl, setDownloadUrl] = useState('');
 
+    // Function displays the add flower form
     const handleAddBtn = () => {
         setIsAddBtnClicked(!isAddBtnClicked);
         setIsRandomBtnClicked(false);
@@ -23,6 +24,7 @@ function Home() {
         setIsDownloadBtnDisplayed(false);
     }
 
+    // Function displays the Random flower generated UI
     const handleRandomBtn = () => {
         setIsAddBtnClicked(false);
         setIsRandomBtnClicked(!isRandomBtnClicked);
@@ -30,6 +32,7 @@ function Home() {
         setIsDownloadBtnDisplayed(false);
     }
 
+    // Function displays all UI for all flowers
     const handleDisplayBtn = () => {
         setIsAddBtnClicked(false);
         setIsRandomBtnClicked(false);
@@ -37,6 +40,7 @@ function Home() {
         setIsDownloadBtnDisplayed(false);
     }
 
+    // Function calls the Download flowers API
     const handleDownloadBtn = async(e) => {
         setDownloadUrl('');
         setIsAddBtnClicked(false);
@@ -45,6 +49,7 @@ function Home() {
         setIsDownloadBtnDisplayed(!isDownloadBtnDisplayed);
 
         try {
+            // calling the API that will trigger the Download Flowers Lambda Function
             const response = await axios.get('https://0ngvbvj23k.execute-api.us-east-1.amazonaws.com/build/downloadFlowers');
             setDownloadUrl(response.data.body.url);
         } catch (error) {

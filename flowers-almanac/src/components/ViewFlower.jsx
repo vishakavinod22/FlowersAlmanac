@@ -3,6 +3,7 @@ import { Button} from 'react-bootstrap';
 import { useState } from 'react';
 import axios from 'axios';
 
+// Component that displays a single flower data that is randomly generated
 function ViewFlower(){
 
     const [isGenerate, setIsGenerate] = useState(false);
@@ -14,6 +15,7 @@ function ViewFlower(){
     const generateRandomFlower = async(e) => {
         setIsGenerate(true);
         try {
+            // calling the API that will trigger the Random Flower Picker Lambda Function
             const response = await axios.get('https://0ngvbvj23k.execute-api.us-east-1.amazonaws.com/build/fetchRandom');
             setFlowerData({
                 commonName: response.data.body.commonName,
